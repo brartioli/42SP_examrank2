@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 14:18:34 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/03 14:47:18 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/03 14:35:57 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/03 14:37:20 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void 	ft_putstr(char *str)
+void	ft_swap(int *a, int *b)
 {
-	unsigned int i = 0;
-	while (str[i] != 0)
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
