@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   search_and_replace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 14:38:04 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/09 17:59:35 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/09 17:57:36 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/09 18:26:26 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	<unistd.h>
 
-int	ft_verifyalpha(char c)
+int main (int argc, char *argv[])
 {
-	if (c >= 'a' && c <= 'z')
-		return(c - 'a' + 1);
-	if (c >= 'A' && c <= 'Z')
-		return(c - 'A' + 1);
-	return (1);
-
-}
-int main(int argc, char *argv[])
-{
-	if (argc != 2)
-		write(1, "\n", 1);
-	else
+	if (argc == 4)
 	{
 		int i = 0;
 		while (argv[1][i])
 		{
-			int reapt = ft_verifyalpha(argv[1][i]);
-			while (reapt > 0)
-			{
-				write (1, &argv[1][i], 1);
-				reapt --;
-			}
+			if (argv[1][i] == argv[2][0])
+				argv[1][i] = argv[3][0];
+			write(1, &argv[1][i], 1);
 			i++;
 		}
-		write (1, "\n", 1);
 	}
+	write(1, "\n", 1);
+	return (0);
 }
